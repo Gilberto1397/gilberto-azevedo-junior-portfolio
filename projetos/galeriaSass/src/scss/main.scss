@@ -1,0 +1,407 @@
+@import 'reset';
+@import 'mixins';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+    background-color: black;
+}
+
+body{
+    height: 100vh;
+    width: 99vw;
+}
+
+.cabecalho{
+    height: auto;
+    width: 100%;
+}
+
+.menu{
+    width: 95%;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    @include max769{
+        display: none;
+
+        @include max481{
+            display: none;
+        }
+    }
+
+    &__logo{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & p{
+            color: silver;
+            font-size: 6rem;
+        }
+    }
+
+    &__links{
+        flex: 1;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        & a{
+            text-decoration: none;
+            color: silver;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            transition: 0.5s;
+            @include max989{
+                font-size: 1.2rem;
+            }
+
+            &:hover{
+                transition: 0.5s;
+                color: white;
+                font-size: 1.8rem;
+            }
+        }
+    }
+
+    &__social{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & a{
+            font-size: 2rem;
+            margin: 0 2rem;
+            color: silver;
+            transition: 0.5s;
+
+            &:hover{
+                transition: 0.5s;
+                color: blue;
+            }
+        }
+    }
+}
+
+.menu-mobile{
+    width: 90%;
+    margin: 2rem auto;
+    display: none;
+    justify-content: space-around;
+    height: 10rem;
+    @include max769{
+        display: flex;
+
+        @include max481{
+            display: flex;
+        }
+    }
+    /* @include max1201{
+        display: none;
+    } */
+
+    &__logo{
+        flex: 1;
+
+        & p{
+            color: silver;
+            font-size: 6rem;
+        }
+    }
+
+    &__botoes{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    &__hamburguer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+
+        & input{
+            display: none;
+        }
+
+        & label{
+            color: silver;
+            font-size: 5rem;
+            margin-bottom: 3rem;
+            width: 100%;
+            text-align: end;
+        }
+
+        & a{
+            background-color: silver;
+            width: 150%;
+            text-align: center;
+            line-height: 5rem;
+            text-decoration: none;
+            color: black;
+            height: 5rem;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            transition: 0.9s;
+            margin-bottom: 0.1rem;
+            /* margin-right: -500rem; */
+            display: none;
+        }
+
+        #ponteiro:checked ~ a{
+            /* margin-right: 0px; */
+            transition: 0.9s;
+            display: block;
+        }
+
+        #ponteiro:checked ~ #social > a{
+            /* margin-right: 0px; */
+            transition: 0.9s;
+            display: block;
+        }
+    }
+
+    &__social{
+        width: 150%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        & a{
+            font-size: 2rem;
+            background-color: black;
+            color: silver;
+        }
+    }
+
+}
+
+.galeria{
+    height: auto;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 2rem;
+
+    &__area{
+        height: auto;
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;        
+        @include max769{
+            width: 100%;
+
+            @include max481{
+                width: 100%;
+                flex-direction: column;
+            }
+        }
+    }
+
+    &__foto{
+        width: 31%;
+        height: 40rem;
+        margin: 1rem 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        @include max769{
+            width: 35%;
+
+            @include max481{
+                width: 80%;                
+            }
+        }
+
+        & p{
+            font-size: 3rem;
+            text-transform: capitalize;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        & a{
+            font-size: 2rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: white;
+            border: 1px solid white;
+            padding: 1rem;
+            transition: 0.5s;
+
+            &:hover{
+                background-color: white;
+                color: black;
+                transition: 0.5s;
+            }
+        }
+
+        &#foto1{
+            background-image: url('../../img/animais.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            filter: grayscale(100%);
+            transition: 0.5s;
+
+            &:hover{
+                filter: grayscale(10%);
+                background-size: 120%;
+                transition: 0.5s;
+            }
+        }
+
+        &#foto2{
+            background-image: url('../../img/arquitetura.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            filter: grayscale(100%);
+            transition: 0.5s;
+
+            &:hover{
+                filter: grayscale(10%);
+                background-size: 120%;
+                transition: 0.5s;
+            }
+        }
+
+        &#foto3{
+            background-image: url('../../img/cidade.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            filter: grayscale(100%);
+            transition: 0.5s;
+
+            &:hover{
+                filter: grayscale(10%);
+                background-size: 120%;
+                transition: 0.5s;
+            }
+        }
+
+        &#foto4{
+            background-image: url('../../img/decoracao.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            filter: grayscale(100%);
+            transition: 0.5s;
+
+            &:hover{
+                filter: grayscale(10%);
+                background-size: 120%;
+                transition: 0.5s;
+            }
+        }
+
+        &#foto5{
+            background-image: url('../../img/esportes.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            filter: grayscale(100%);
+            transition: 0.5s;
+
+            &:hover{
+                filter: grayscale(10%);
+                background-size: 120%;
+                transition: 0.5s;
+            }
+        }
+
+        &#foto6{
+            background-image: url('../../img/natureza.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            filter: grayscale(100%);
+            transition: 0.5s;
+
+            &:hover{
+                filter: grayscale(10%);
+                background-size: 120%;
+                transition: 0.5s;
+            }
+        }
+
+        &#foto7{
+            background-image: url('../../img/paisagem.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            filter: grayscale(100%);
+            transition: 0.5s;
+
+            &:hover{
+                filter: grayscale(10%);
+                background-size: 120%;
+                transition: 0.5s;
+            }
+        }
+
+        &#foto8{
+            background-image: url('../../img/pessoas.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            filter: grayscale(100%);
+            transition: 0.5s;
+
+            &:hover{
+                filter: grayscale(10%);
+                background-size: 120%;
+                transition: 0.5s;
+            }
+        }
+        &#foto9{
+            background-image: url('../../img/refeicoes.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            filter: grayscale(100%);
+            transition: 0.5s;
+
+            &:hover{
+                filter: grayscale(10%);
+                background-size: 120%;
+                transition: 0.5s;
+            }
+        }
+    }
+}
+
+.rodape{
+    width: 100%;
+    height: auto;
+    text-align: center;
+
+    &__area{
+        width: 100%;
+        height: 5rem;
+        text-align: center;
+        line-height: 5rem;
+
+        & p, span{
+        color: rgb(71, 149, 76);
+        font-size: 2rem;
+        }
+    }
+}

@@ -1,0 +1,350 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 10px;
+  background-color: black; }
+
+body {
+  height: 100vh;
+  width: 99vw; }
+
+.cabecalho {
+  height: auto;
+  width: 100%; }
+
+.menu {
+  width: 95%;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-between;
+  height: auto; }
+  @media (max-width: 769px) {
+    .menu {
+      display: none; } }
+  @media (max-width: 769px) and (max-width: 481px) {
+    .menu {
+      display: none; } }
+  .menu__logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .menu__logo p {
+      color: silver;
+      font-size: 6rem; }
+  .menu__links {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+    .menu__links a {
+      text-decoration: none;
+      color: silver;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      transition: 0.5s; }
+      @media (max-width: 989px) {
+        .menu__links a {
+          font-size: 1.2rem; } }
+      .menu__links a:hover {
+        transition: 0.5s;
+        color: white;
+        font-size: 1.8rem; }
+  .menu__social {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .menu__social a {
+      font-size: 2rem;
+      margin: 0 2rem;
+      color: silver;
+      transition: 0.5s; }
+      .menu__social a:hover {
+        transition: 0.5s;
+        color: blue; }
+
+.menu-mobile {
+  width: 90%;
+  margin: 2rem auto;
+  display: none;
+  justify-content: space-around;
+  height: 10rem;
+  /* @include max1201{
+        display: none;
+    } */ }
+  @media (max-width: 769px) {
+    .menu-mobile {
+      display: flex; } }
+  @media (max-width: 769px) and (max-width: 481px) {
+    .menu-mobile {
+      display: flex; } }
+  .menu-mobile__logo {
+    flex: 1; }
+    .menu-mobile__logo p {
+      color: silver;
+      font-size: 6rem; }
+  .menu-mobile__botoes {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: auto; }
+  .menu-mobile__hamburguer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1; }
+    .menu-mobile__hamburguer input {
+      display: none; }
+    .menu-mobile__hamburguer label {
+      color: silver;
+      font-size: 5rem;
+      margin-bottom: 3rem;
+      width: 100%;
+      text-align: end; }
+    .menu-mobile__hamburguer a {
+      background-color: silver;
+      width: 150%;
+      text-align: center;
+      line-height: 5rem;
+      text-decoration: none;
+      color: black;
+      height: 5rem;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      transition: 0.9s;
+      margin-bottom: 0.1rem;
+      /* margin-right: -500rem; */
+      display: none; }
+    .menu-mobile__hamburguer #ponteiro:checked ~ a {
+      /* margin-right: 0px; */
+      transition: 0.9s;
+      display: block; }
+    .menu-mobile__hamburguer #ponteiro:checked ~ #social > a {
+      /* margin-right: 0px; */
+      transition: 0.9s;
+      display: block; }
+  .menu-mobile__social {
+    width: 150%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+    .menu-mobile__social a {
+      font-size: 2rem;
+      background-color: black;
+      color: silver; }
+
+.galeria {
+  height: auto;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 2rem; }
+  .galeria__area {
+    height: auto;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; }
+    @media (max-width: 769px) {
+      .galeria__area {
+        width: 100%; } }
+  @media (max-width: 769px) and (max-width: 481px) {
+    .galeria__area {
+      width: 100%;
+      flex-direction: column; } }
+  .galeria__foto {
+    width: 31%;
+    height: 40rem;
+    margin: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    @media (max-width: 769px) {
+      .galeria__foto {
+        width: 35%; } }
+  @media (max-width: 769px) and (max-width: 481px) {
+    .galeria__foto {
+      width: 80%; } }
+    .galeria__foto p {
+      font-size: 3rem;
+      text-transform: capitalize;
+      color: white;
+      margin-bottom: 1.5rem; }
+    .galeria__foto a {
+      font-size: 2rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: white;
+      border: 1px solid white;
+      padding: 1rem;
+      transition: 0.5s; }
+      .galeria__foto a:hover {
+        background-color: white;
+        color: black;
+        transition: 0.5s; }
+    .galeria__foto#foto1 {
+      background-image: url("../../img/animais.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      filter: grayscale(100%);
+      transition: 0.5s; }
+      .galeria__foto#foto1:hover {
+        filter: grayscale(10%);
+        background-size: 120%;
+        transition: 0.5s; }
+    .galeria__foto#foto2 {
+      background-image: url("../../img/arquitetura.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      filter: grayscale(100%);
+      transition: 0.5s; }
+      .galeria__foto#foto2:hover {
+        filter: grayscale(10%);
+        background-size: 120%;
+        transition: 0.5s; }
+    .galeria__foto#foto3 {
+      background-image: url("../../img/cidade.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      filter: grayscale(100%);
+      transition: 0.5s; }
+      .galeria__foto#foto3:hover {
+        filter: grayscale(10%);
+        background-size: 120%;
+        transition: 0.5s; }
+    .galeria__foto#foto4 {
+      background-image: url("../../img/decoracao.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      filter: grayscale(100%);
+      transition: 0.5s; }
+      .galeria__foto#foto4:hover {
+        filter: grayscale(10%);
+        background-size: 120%;
+        transition: 0.5s; }
+    .galeria__foto#foto5 {
+      background-image: url("../../img/esportes.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      filter: grayscale(100%);
+      transition: 0.5s; }
+      .galeria__foto#foto5:hover {
+        filter: grayscale(10%);
+        background-size: 120%;
+        transition: 0.5s; }
+    .galeria__foto#foto6 {
+      background-image: url("../../img/natureza.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      filter: grayscale(100%);
+      transition: 0.5s; }
+      .galeria__foto#foto6:hover {
+        filter: grayscale(10%);
+        background-size: 120%;
+        transition: 0.5s; }
+    .galeria__foto#foto7 {
+      background-image: url("../../img/paisagem.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      filter: grayscale(100%);
+      transition: 0.5s; }
+      .galeria__foto#foto7:hover {
+        filter: grayscale(10%);
+        background-size: 120%;
+        transition: 0.5s; }
+    .galeria__foto#foto8 {
+      background-image: url("../../img/pessoas.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      filter: grayscale(100%);
+      transition: 0.5s; }
+      .galeria__foto#foto8:hover {
+        filter: grayscale(10%);
+        background-size: 120%;
+        transition: 0.5s; }
+    .galeria__foto#foto9 {
+      background-image: url("../../img/refeicoes.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      filter: grayscale(100%);
+      transition: 0.5s; }
+      .galeria__foto#foto9:hover {
+        filter: grayscale(10%);
+        background-size: 120%;
+        transition: 0.5s; }
+
+.rodape {
+  width: 100%;
+  height: auto;
+  text-align: center; }
+  .rodape__area {
+    width: 100%;
+    height: 5rem;
+    text-align: center;
+    line-height: 5rem; }
+    .rodape__area p, .rodape__area span {
+      color: #47954c;
+      font-size: 2rem; }

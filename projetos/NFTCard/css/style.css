@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+}
+
+main{
+    background-color: rgb(1, 1, 44);
+    width: 100%;
+    height: 100vh;
+}
+
+section{
+    background-color: rgb(3, 11, 78);
+    width: 350px;
+    height: 55vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 80px;
+    border-radius: 20px;
+}
+
+#equilibrium{
+    width: 300px;
+    border-radius: 10px;
+    background-color: black;
+}
+
+#elemento1{
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+  margin-right: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+#elemento1 h3{
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+#elemento1 p{
+    
+    font-weight: 300;
+}
+
+#elemento3{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: white;
+    
+}
+
+#elemento3 h5{
+    margin-left: 25px;
+
+}
+
+#elemento3 p{
+    margin-right: 20px;
+
+}
+
+#elemento2{
+    display: flex;
+}
+
+#elemento2 img{
+    
+}
+
+hr{
+    width: 90%;
+    
+}
+
+#elemento4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+#elemento4 img{
+    width: 30px;
+   
+}
+
+@media screen and (max-height:950px )
+{
+    #equilibrium{
+        width: 300px;
+    }
+
+    section{
+        height: 85vh;
+        top: 40px;
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-height:568px )
+{
+    #equilibrium{
+        width: 250px;
+    }
+
+    section{
+        height: 85vh;
+        top: 40px;
+    }
+
+}
